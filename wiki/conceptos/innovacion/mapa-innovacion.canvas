@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "group_u1",
+      "type": "group",
+      "label": "🟡 UNIDAD I: Impulso Emprendedor y Creatividad",
+      "x": -50,
+      "y": -50,
+      "width": 1100,
+      "height": 750,
+      "color": "4"
+    },
+    {
+      "id": "node_creatividad",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/creatividad-e-innovacion.md",
+      "x": 0,
+      "y": 0,
+      "width": 480,
+      "height": 320
+    },
+    {
+      "id": "node_perfiles",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/perfiles-emprendedores-y-startups.md",
+      "x": 540,
+      "y": 0,
+      "width": 480,
+      "height": 320
+    },
+    {
+      "id": "node_scamper",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/metodologia-scamper.md",
+      "x": 0,
+      "y": 360,
+      "width": 480,
+      "height": 300
+    },
+    {
+      "id": "node_scrum",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/scrum-para-startups.md",
+      "x": 540,
+      "y": 360,
+      "width": 480,
+      "height": 300
+    },
+    {
+      "id": "group_u2",
+      "type": "group",
+      "label": "🔵 UNIDAD II: Metodología Design Thinking (Doble Diamante)",
+      "x": 1120,
+      "y": -50,
+      "width": 1100,
+      "height": 750,
+      "color": "5"
+    },
+    {
+      "id": "node_dt",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/design-thinking-metodologia.md",
+      "x": 1170,
+      "y": 0,
+      "width": 480,
+      "height": 320
+    },
+    {
+      "id": "node_pitch",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/elevator-pitch.md",
+      "x": 1710,
+      "y": 0,
+      "width": 480,
+      "height": 320
+    },
+    {
+      "id": "node_empatizar",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/fase-empatizar-y-mapa-de-empatia.md",
+      "x": 1170,
+      "y": 360,
+      "width": 480,
+      "height": 300
+    },
+    {
+      "id": "node_definir",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/fase-definir-pov-y-hmw.md",
+      "x": 1710,
+      "y": 360,
+      "width": 480,
+      "height": 300
+    },
+    {
+      "id": "group_u3",
+      "type": "group",
+      "label": "🟢 UNIDAD III: Modelos de Negocio y Escalabilidad",
+      "x": 2290,
+      "y": -50,
+      "width": 600,
+      "height": 750,
+      "color": "3"
+    },
+    {
+      "id": "node_canvas",
+      "type": "file",
+      "file": "wiki/conceptos/innovacion/business-model-canvas-vs-lean-canvas.md",
+      "x": 2340,
+      "y": 150,
+      "width": 500,
+      "height": 450
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "fromNode": "node_creatividad",
+      "fromSide": "right",
+      "toNode": "node_perfiles",
+      "toSide": "left",
+      "label": "Genera valor en"
+    },
+    {
+      "id": "edge_2",
+      "fromNode": "node_creatividad",
+      "fromSide": "bottom",
+      "toNode": "node_scamper",
+      "toSide": "top",
+      "label": "Técnica lateral"
+    },
+    {
+      "id": "edge_3",
+      "fromNode": "node_perfiles",
+      "fromSide": "bottom",
+      "toNode": "node_scrum",
+      "toSide": "top",
+      "label": "Organización ágil"
+    },
+    {
+      "id": "edge_4",
+      "fromNode": "node_scamper",
+      "fromSide": "right",
+      "toNode": "node_dt",
+      "toSide": "left",
+      "label": "Aporta a la ideación de"
+    },
+    {
+      "id": "edge_5",
+      "fromNode": "node_dt",
+      "fromSide": "bottom",
+      "toNode": "node_empatizar",
+      "toSide": "top",
+      "label": "Fase 1"
+    },
+    {
+      "id": "edge_6",
+      "fromNode": "node_empatizar",
+      "fromSide": "right",
+      "toNode": "node_definir",
+      "toSide": "left",
+      "label": "Fase 2 (Síntesis)"
+    },
+    {
+      "id": "edge_7",
+      "fromNode": "node_definir",
+      "fromSide": "top",
+      "toNode": "node_pitch",
+      "toSide": "bottom",
+      "label": "Define el problema para"
+    },
+    {
+      "id": "edge_8",
+      "fromNode": "node_pitch",
+      "fromSide": "right",
+      "toNode": "node_canvas",
+      "toSide": "left",
+      "label": "Sustentado en el"
+    }
+  ]
+}

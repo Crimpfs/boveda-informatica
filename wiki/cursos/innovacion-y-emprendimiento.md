@@ -2,15 +2,16 @@
 title: "Innovación y Emprendimiento (UNT - Ciclo IV)"
 type: curso
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-10-09
 tags:
   - wiki/curso
   - ciclo/iv
-  - domain/emprendimiento-negocios
+  - domain/innovacion-emprendimiento
 aliases:
   - "Innovación"
   - "I+E"
 docentes:
+  - "Dr. Ing. Juan Francisco Pacheco Torres"
   - "Prof. Yenny Milagritos Sifuentes Díaz (ysifuentes@unitru.edu.pe)"
   - "Prof. Jorge Luis Alvarado Ramos (jalvarador@unitru.edu.pe)"
 creditos: 3
@@ -25,6 +26,12 @@ codigo: 13640
 
 ---
 
+## 🗺️ Mapa Visual del Curso (Canvas)
+Explora la arquitectura integral del curso en el lienzo interactivo:
+👉 **[[mapa-innovacion.canvas|Abrir Esquema Visual del Curso (Canvas)]]**
+
+---
+
 ## 📊 Sistema de Evaluación y Fórmulas de Calificación
 
 - **Nota mínima aprobatoria:** 14 (El medio punto 0.5 favorece al estudiante).
@@ -35,37 +42,36 @@ codigo: 13640
 - **Promedio Promocional ($PP$):**
   $$PP = \frac{PU_1 + PU_2 + PU_3}{3}$$
 
-*(Donde: $DA$ = Desarrollo de Actividades / Informes, $EU$ = Examen de Unidad, $TF$ = Trabajo Final).*
+*(Donde: $DA$ = Desarrollo de Actividades / Informes de Práctica, $EU$ = Examen de Unidad, $TF$ = Trabajo Final).*
 
 ---
 
-## 🗺️ Hoja de Ruta Semana a Semana
+## 📚 Red de Apuntes y Conceptos Teóricos
 
-### 🟡 Unidad I: Innovación y Emprendimiento
-- [ ] **Semana 1:** Emprendimiento. Perfil y características de emprendedores. Ingresos pasivos vs activos.
-- [ ] **Semana 2:** Tipos de emprendedores y análisis de casos de éxito tecnológico.
-- [ ] **Semana 3:** Técnicas de creatividad e ideación: Método **SCAMPER**.
-- [ ] **Semana 4:** Identificación de ideas de negocio innovadoras y técnica **Elevator Pitch**.
-- [ ] **Semana 5:** 📝 **Examen de Unidad I**.
+### 🟡 Unidad I: Innovación, Creatividad y Startups
+- [x] **Fundamentos de Innovación:** [[creatividad-e-innovacion|Creatividad, Invención e Innovación Tecnológica]]
+- [x] **Perfiles y Modelos de Negocio:** [[perfiles-emprendedores-y-startups|Perfiles Emprendedores, Startups y Lógica de Ingresos]]
+- [x] **Técnicas de Creatividad Lateral:** [[metodologia-scamper|Técnica Creativa SCAMPER]]
+- [x] **Gestión Ágil de Equipos:** [[scrum-para-startups|Scrum para Startups (PO, SM, Devs)]]
+- [x] **Comunicación Persuasiva:** [[elevator-pitch|Estructura de un Elevator Pitch Ganador]]
 
-### 🔵 Unidad II: Design Thinking
-- [ ] **Semana 6:** Metodología Design Thinking. Fase 1: **Empatizar** (mapa de empatía, observación).
-- [ ] **Semana 7:** Fase 2: **Definir** (Punto de Vista / POV) y Fase 3: **Idear** (lluvia de ideas, filtrado).
-- [ ] **Semana 8:** Fase 4: **Prototipar** (prototipos de baja y media fidelidad para software).
-- [ ] **Semana 9:** Fase 5: **Evaluar / Testear** (mallas receptoras de información, retroalimentación).
-- [ ] **Semana 10:** 📝 **Examen de Unidad II**.
+### 🔵 Unidad II: Metodología Design Thinking (Doble Diamante)
+- [x] **Marco de Trabajo:** [[design-thinking-metodologia|Design Thinking y el Enfoque Centrado en las Personas]]
+- [x] **Fase 1 (Empatizar):** [[fase-empatizar-y-mapa-de-empatia|Fase 1: Empatizar, Entrevistas y Mapa de Empatía]]
+- [x] **Fase 2 (Definir):** [[fase-definir-pov-y-hmw|Fase 2: Definir, Formulación del POV y Preguntas HMW]]
+- [ ] **Fase 3 (Idear):** Brainstorming, Selección de Alternativas y Co-diseño.
+- [ ] **Fase 4 (Prototipar):** Prototipos de baja y media fidelidad (Figma, Mockups interactivos).
+- [ ] **Fase 5 (Testear):** Malla receptora de información y pruebas con usuarios.
 
-### 🟢 Unidad III: Modelos de Negocio (Business Model Canvas)
-- [ ] **Semana 11:** Introducción al Modelo Canvas (9 bloques).
-- [ ] **Semana 12:** Bloques 1-3: Propuesta de Valor, Segmentos de Clientes y Canales.
-- [ ] **Semana 13:** Bloques 4-6: Relación con Clientes, Fuentes de Ingresos y Recursos Clave.
-- [ ] **Semana 14:** Bloques 7-9: Actividades Clave, Socios Clave y Estructura de Costos.
-- [ ] **Semana 15:** 📝 **Presentación del Trabajo Final** (Pitch de Negocio) y Examen Unidad III.
-- [ ] **Semana 16:** Examen Sustitutorio y Aplazados.
+### 🟢 Unidad III: Modelos de Negocio y Escalabilidad
+- [x] **Lienzos Estratégicos:** [[business-model-canvas-vs-lean-canvas|Business Model Canvas vs. Lean Canvas (Ash Maurya)]]
+- [ ] **Métricas y Validación:** Pirate Metrics (AARRR), Validación de Product-Market Fit.
+- [ ] **Estrategia Go-to-Market:** Canales de distribución, CAC vs LTV y Pitch Deck Final.
 
 ---
 
-## 📚 Bibliografía Oficial
-- **Osterwalder, A. & Pigneur, Y.**: *Generación de Modelos de Negocio (Business Model Canvas)*.
-- **Sánchez-García, J. C. (2020)**: *Emprendimiento e Innovación: Oportunidades para todos* (Dykinson).
-- **Binder, T. et al. (2011)**: *Design Things* (MIT Press).
+## 📁 Fuentes y Materiales del Curso en la Bóveda
+* 📑 **Sílabo Oficial:** `fuentes/IV CICLO ING INFORMATICA/innovacion y emprendimiento/INNOVACION Y EMPRENDIMIENTO.pdf`
+* 📑 **Guías de Práctica:** `fuentes/IV CICLO ING INFORMATICA/innovacion y emprendimiento/SEMANA 1/` a `SEMANA 7/`
+* 📑 **Manual Lean Startup:** `fuentes/IV CICLO ING INFORMATICA/innovacion y emprendimiento/SEMANA 1/Material de Clase-20260830/5. Manual-Lean-Startup.pdf`
+* 📑 **Guía Design Thinking:** `fuentes/IV CICLO ING INFORMATICA/innovacion y emprendimiento/SEMANA 1/Material de Clase-20260830/3. GUÍA DESIGN THINKING V 1.2 JMV_compressed.pdf`
