@@ -1,0 +1,9 @@
+{
+  "cssTheme": "Cupertino",
+  "theme": "obsidian",
+  "accentColor": "#ec0e0e",
+  "showRibbon": false,
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "baseFontSize": 15
+}

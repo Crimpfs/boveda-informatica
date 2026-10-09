@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"group1","type":"group","x":-520,"y":260,"width":1520,"height":1340,"color":"5","label":"Fundamentos de Electrónica Digital (Basado en Morris Mano)"},
+		{"id":"text1","type":"text","text":"### 📖 Morris Mano (Cap. 1)\n\n> \"Los elementos discretos de información se representan en un sistema digital por cantidades físicas llamadas señales... Las señales en los sistemas digitales tienen solamente dos valores discretos y se dice que son binarios.\"\n\nDe aquí la necesidad de un **Pulsador** bien acondicionado (Pull-up/Pull-down) para garantizar solo 2 valores (0 y 1).","x":680,"y":820,"width":350,"height":250},
+		{"id":"img2","type":"file","file":"fuentes/assets/cronograma-digital.png","x":426,"y":1340,"width":399,"height":183},
+		{"id":"node2","type":"file","file":"wiki/conceptos/electronica/pulsadores-e-interruptores.md","x":455,"y":360,"width":350,"height":300},
+		{"id":"node1","type":"file","file":"wiki/conceptos/electronica/magnitudes-analogicas-y-digitales.md","x":-420,"y":360,"width":350,"height":300},
+		{"id":"img1","type":"file","file":"fuentes/assets/analog-vs-digital.png","x":-419,"y":773,"width":349,"height":223},
+		{"id":"node3","type":"file","file":"wiki/conceptos/electronica/cronograma-y-tabla-de-variables.md","x":-420,"y":1244,"width":350,"height":300}
+	],
+	"edges":[
+		{"id":"edge1","fromNode":"node1","fromSide":"bottom","toNode":"img1","toSide":"top","color":"1","label":"visualización"},
+		{"id":"edge2","fromNode":"node1","fromSide":"right","toNode":"node2","toSide":"left","color":"2","label":"se implementa físicamente con"},
+		{"id":"edge3","fromNode":"node2","fromSide":"bottom","toNode":"text1","toSide":"top","color":"3","label":"teoría base"},
+		{"id":"edge4","fromNode":"node2","fromSide":"bottom","toNode":"node3","toSide":"right","color":"4","label":"se analiza usando"},
+		{"id":"edge5","fromNode":"img1","fromSide":"bottom","toNode":"node3","toSide":"top","color":"5","label":"flujo dinámico"},
+		{"id":"edge6","fromNode":"node3","fromSide":"right","toNode":"img2","toSide":"left","color":"6"}
+	]
+}

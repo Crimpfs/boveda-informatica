@@ -1,0 +1,10 @@
+# Obsidian workspace state (ventanas y estado de sesion local)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+
+# Archivos del sistema
+desktop.ini
+Thumbs.db
+*.tmp

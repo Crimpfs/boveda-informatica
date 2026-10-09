@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1787225012621,
+      "title": "visualizador",
+      "options": {
+        "collapse-filter": true,
+        "search": "",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": true,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "path:estrategias OR tag:#curso/estrategias-algoritmicas",
+            "color": {
+              "a": 1,
+              "rgb": 11657298
+            }
+          },
+          {
+            "query": "path:electronica-para-computacion OR tag:#curso/electronica-para-computacion",
+            "color": {
+              "a": 1,
+              "rgb": 14725458
+            }
+          },
+          {
+            "query": "path:grafica OR file:grafica",
+            "color": {
+              "a": 1,
+              "rgb": 5431518
+            }
+          },
+          {
+            "query": "path:automatas OR file:automatas",
+            "color": {
+              "a": 1,
+              "rgb": 4052623
+            }
+          },
+          {
+            "query": "path:archivos OR file:archivos",
+            "color": {
+              "a": 1,
+              "rgb": 14709530
+            }
+          },
+          {
+            "query": "path:innovacion OR file:innovacion",
+            "color": {
+              "a": 1,
+              "rgb": 7669
+            }
+          },
+          {
+            "query": "path:wiki/cursos",
+            "color": {
+              "a": 1,
+              "rgb": 16711680
+            }
+          }
+        ],
+        "collapse-display": false,
+        "showArrow": false,
+        "textFadeMultiplier": -1,
+        "nodeSizeMultiplier": 0.808468292682927,
+        "lineSizeMultiplier": 0.808468292682927,
+        "collapse-forces": false,
+        "centerStrength": 0,
+        "repelStrength": 10.4166666666667,
+        "linkStrength": 0.550439024390244,
+        "linkDistance": 122,
+        "scale": 0.0622513490846042,
+        "close": true
+      }
+    }
+  ]
+}

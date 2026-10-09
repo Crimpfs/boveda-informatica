@@ -1,0 +1,72 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:grafica OR tag:#domain/computacion-grafica  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "path:estrategias OR tag:#domain/estrategias-algoritmicas  ",
+      "color": {
+        "a": 1,
+        "rgb": 9958
+      }
+    },
+    {
+      "query": "path:archivos OR tag:#domain/bases-datos-archivos  ",
+      "color": {
+        "a": 1,
+        "rgb": 15292684
+      }
+    },
+    {
+      "query": "path:electronica OR tag:#domain/hardware-electronica  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    },
+    {
+      "query": "path:innovacion OR tag:innovacion",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:mate-discreta OR tag:#domain/matematica-discreta  ",
+      "color": {
+        "a": 1,
+        "rgb": 5419488
+      }
+    },
+    {
+      "query": "path:analisis-numerico OR tag:#domain/analisis-numerico  ",
+      "color": {
+        "a": 1,
+        "rgb": 10186607
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.543934130966165,
+  "repelStrength": 16.8326157158235,
+  "linkStrength": 1,
+  "linkDistance": 225,
+  "scale": 0.2736169988428086,
+  "close": true
+}

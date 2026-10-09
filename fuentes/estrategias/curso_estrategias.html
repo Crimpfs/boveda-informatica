@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategias Algorítmicas - Guía del Curso</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --success: #27ae60;
+            --warning: #f1c40f;
+            --light: #ecf0f1;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--secondary);
+        }
+
+        .unit {
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .unit.completed {
+            border-left-color: var(--success);
+            background-color: #f0fdf4;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            opacity: 0.8;
+        }
+
+        .unit.current {
+            border-left-color: var(--warning);
+            background-color: #fffbeb;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .badge.success { background-color: var(--success); }
+        .badge.warning { background-color: #f39c12; color: #fff; }
+        .badge.info { background-color: var(--accent); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+
+        .tips-list li {
+            margin-bottom: 10px;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .resource-card {
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            border-radius: 6px;
+            padding: 15px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .resource-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .schema {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
+            text-align: center;
+            background: #fdfdfd;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .node {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin: 0 auto;
+        }
+
+        .node h4 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .node p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .node-tag {
+            display: inline-block;
+            background: var(--light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .schema-arrow {
+            font-size: 1.5rem;
+            color: #bdc3c7;
+            margin: 10px 0;
+        }
+
+        .schema-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 2rem;
+        }
+        
+        .schema-row.split {
+            align-items: flex-start;
+        }
+
+        .schema-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .schema-row.split {
+                flex-direction: column;
+            }
+        }
+
+        /* Colors for different categories */
+        .node.root { border-color: #34495e; background: #ecf0f1; }
+        .node.exact { border-color: #3498db; border-top-width: 6px; }
+        .node.approx { border-color: #f1c40f; border-top-width: 6px; }
+        .node.base { border-color: #95a5a6; border-left-width: 4px; }
+        .node.advanced { border-color: #2ecc71; border-left-width: 4px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Estrategias Algorítmicas</h1>
+        <p>Universidad Nacional de Trujillo | Ciclo III (2026-I)</p>
+    </header>
+
+    <div class="container">
+        <!-- SECCIÓN: TEMARIO DEL CURSO -->
+        <div class="section">
+            <h2>Temario del Curso (Sílabo)</h2>
+            <p>El curso se divide en 3 unidades temáticas enfocadas en el diseño y análisis de algoritmos para resolver problemas computacionales complejos.</p>
+            
+            <div class="unit completed">
+                <h3>Unidad I: Estrategias Branch-and-Bound y Heurísticas <span class="badge success">Completado</span></h3>
+                <p><strong>Semanas 1 a 5</strong></p>
+                <ul>
+                    <li><strong>Semana 1:</strong> Introducción a las Estrategias Algorítmicas Exactas y Aproximadas.</li>
+                    <li><strong>Semana 2:</strong> Optimización y solución de problemas.</li>
+                    <li><strong>Semana 3:</strong> Estrategia algorítmica Branch-and-Bound (Ramificación y Poda).</li>
+                    <li><strong>Semana 4:</strong> Estrategias de aproximación: Heurísticas y metaheurísticas.</li>
+                    <li><strong>Semana 5:</strong> Examen de Unidad I.</li>
+                </ul>
+            </div>
+
+            <div class="unit current">
+                <h3>Unidad II: Estrategias Algorítmicas por Fuerza Bruta, Voraz y Recursivo <span class="badge warning">En Curso</span></h3>
+                <p><strong>Semanas 6 a 10</strong></p>
+                <ul>
+                    <li><strong>Semana 6:</strong> Estrategia algorítmica Fuerza Bruta.</li>
+                    <li><strong>Semana 7:</strong> Estrategia algorítmica Voraz (Greedy).</li>
+                    <li><strong>Semana 8:</strong> Estrategia Recursiva.</li>
+                    <li><strong>Semana 9:</strong> Comparación entre estrategias exactas y aproximadas.</li>
+                    <li><strong>Semana 10:</strong> Examen de Unidad II.</li>
+                </ul>
+            </div>
+
+            <div class="unit">
+                <h3>Unidad III: Dividir para Vencer, Prog. Dinámica y Backtracking <span class="badge info">Próximamente</span></h3>
+                <p><strong>Semanas 11 a 17</strong></p>
+                <ul>
+                    <li><strong>Semana 11:</strong> Estrategia algorítmica Dividir para Vencer (Divide and Conquer).</li>
+                    <li><strong>Semana 12:</strong> Estrategia algorítmica de Programación Dinámica.</li>
+                    <li><strong>Semana 13:</strong> Estrategia algorítmica Backtracking (Vuelta atrás).</li>
+                    <li><strong>Semana 14:</strong> Presentación y sustentación de trabajos de proyectos finales.</li>
+                    <li><strong>Semana 15:</strong> Repaso de temas y su importancia en la producción de software.</li>
+                    <li><strong>Semana 16:</strong> Examen de Unidad III.</li>
+                    <li><strong>Semana 17:</strong> Examen sustitutorio / Aplazados.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: ESQUEMA DE CONEXIÓN DE TEMAS -->
+        <div class="section">
+            <h2>🗺️ Mapa Mental del Curso: ¿Cómo se conectan las estrategias?</h2>
+            <p>Este esquema muestra la evolución de las estrategias de resolución de problemas, desde los enfoques más básicos (exhaustivos) hasta los más sofisticados (optimizados y aproximados).</p>
+            
+            <div class="schema">
+                <div class="schema-row">
+                    <div class="node root">
+                        <h4>El Problema Computacional</h4>
+                        <p>Necesidad de optimización, búsqueda o asignación.</p>
+                    </div>
+                </div>
+                <div class="schema-arrow">↓</div>
+                <div class="schema-row split">
+                    
+                    <!-- Columna Exactas -->
+                    <div class="schema-col">
+                        <div class="node exact">
+                            <h4>Estrategias Exactas</h4>
+                            <p>Garantizan encontrar la solución óptima o correcta evaluando opciones.</p>
+                        </div>
+                        <div class="schema-arrow">↓</div>
+                        
+                        <div class="node base">
+                            <span class="node-tag">Unidad II</span>
+                            <h4>Fuerza Bruta & Recursividad</h4>
+                            <p>Base algorítmica. Genera todas las posibilidades sin filtros.</p>
+                        </div>
+                        <div class="schema-arrow">↓</div>
+                        
+                        <div class="schema-row split">
+                            <div class="schema-col">
+                                <div class="node advanced">
+                                    <span class="node-tag">Unidad III</span>
+                                    <h4>Dividir para Vencer</h4>
+                                    <p>Rompe el problema en partes independientes. Ej: Búsqueda binaria.</p>
+                                </div>
+                                <div class="schema-arrow">↓</div>
+                                <div class="node advanced">
+                                    <span class="node-tag">Unidad III</span>
+                                    <h4>Programación Dinámica</h4>
+                                    <p>Subproblemas superpuestos. Usa "memoria" para no recalcular.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="schema-col">
+                                <div class="node advanced">
+                                    <span class="node-tag">Unidad III</span>
+                                    <h4>Backtracking</h4>
+                                    <p>Búsqueda recursiva con "Poda" básica. Retrocede si el camino es inválido.</p>
+                                </div>
+                                <div class="schema-arrow">↓</div>
+                                <div class="node advanced">
+                                    <span class="node-tag">Unidad I</span>
+                                    <h4>Branch and Bound</h4>
+                                    <p>Backtracking para <em>Optimización</em>. Usa cotas. Ej: Frutos del Chicama (Semana 4).</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <!-- Columna Aproximadas -->
+                    <div class="schema-col">
+                        <div class="node approx">
+                            <h4>Estrategias Aproximadas</h4>
+                            <p>Soluciones rápidas y "suficientemente buenas", pero no siempre óptimas.</p>
+                        </div>
+                        <div class="schema-arrow">↓</div>
+            
+                        <div class="node base">
+                            <span class="node-tag">Unidad II</span>
+                            <h4>Voraz (Greedy)</h4>
+                            <p>Toma la mejor decisión <em>local</em> en cada paso, sin mirar a futuro.</p>
+                        </div>
+                        <div class="schema-arrow">↓</div>
+            
+                        <div class="node advanced">
+                            <span class="node-tag">Unidad I</span>
+                            <h4>Heurísticas / Metaheurísticas</h4>
+                            <p>Reglas de búsqueda inteligente para problemas demasiado grandes (NP-Hard).</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN: EVALUACIÓN -->
+        <div class="section">
+            <h2>Modalidad de Evaluación</h2>
+            <p>La evaluación se calcula de forma progresiva. El Promedio Promocional (PP) se obtiene así:</p>
+            <p><code>PP = (PU1 * 0.3) + (PU2 * 0.3) + (PU3 * 0.4)</code></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Criterios de Evaluación</th>
+                        <th>Peso en la Unidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3"><strong>Unidad 1 (30% del final)</strong></td>
+                        <td>Prácticas de Laboratorio (PL)</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollo de Actividades - Exposiciones (DA)</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td>Examen de Unidad (EU)</td>
+                        <td>40%</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"><strong>Unidad 2 (30% del final)</strong></td>
+                        <td>Prácticas de Laboratorio (PL)</td>
+                        <td>30%</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollo de Actividades - Avance proyecto (DA)</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>Examen de Unidad (EU)</td>
+                        <td>45%</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><strong>Unidad 3 (40% del final)</strong></td>
+                        <td>Prácticas de Laboratorio (PL)</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>Desarrollo de Actividades - Exposición (DA)</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Trabajo Final de Curso (TF)</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>Examen de Unidad (EU)</td>
+                        <td>45%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><small>* La nota mínima aprobatoria es 14. El medio punto (0.5) te favorece en el promedio promocional.</small></p>
+        </div>
+
+        <!-- SECCIÓN: CONSEJOS Y MATERIAL EXTRA -->
+        <div class="section">
+            <h2>📚 Consejos de Estudio y Material Complementario</h2>
+            <p>Para dominar "Estrategias Algorítmicas", no basta con entender la teoría; la clave está en la implementación y la práctica constante en un lenguaje de programación (Python, C++ o Java).</p>
+
+            <ul class="tips-list">
+                <li><strong>Practica en Plataformas Competitivas:</strong> Sitios como LeetCode, HackerRank o Codeforces tienen problemas clasificados por etiquetas (ej. <em>Greedy, Dynamic Programming, Backtracking</em>). Resuelve al menos 3 problemas de nivel medio por cada estrategia que aprendas.</li>
+                <li><strong>Domina la Recursividad:</strong> Antes de entrar a Backtracking y Programación Dinámica (Unidad 3), asegúrate de entender perfectamente la recursividad y cómo se maneja la pila de llamadas (Call Stack).</li>
+                <li><strong>Dibuja Árboles de Decisión:</strong> Para algoritmos como Branch-and-Bound o Backtracking, dibuja en papel el árbol de estados. Visualizar cómo el algoritmo "ramifica y poda" te hará entenderlo al 100%.</li>
+                <li><strong>Prepara tu Proyecto Final desde ya:</strong> En la Unidad 3 se evalúa un Trabajo Final (25% del promedio). Anda pensando en un problema del mundo real (rutas óptimas, asignación de horarios, etc.) que puedas resolver aplicando alguna estrategia del curso.</li>
+            </ul>
+
+            <h3>Recursos y Bibliografía Recomendada</h3>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h4>📖 El "Cormen" (La Biblia de los Algoritmos)</h4>
+                    <p><em>Introduction to Algorithms</em> por Thomas H. Cormen. Es la referencia obligatoria del sílabo. Es muy matemático y riguroso. Úsalo para entender la teoría y la complejidad (Big O) de cada algoritmo.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🖥️ Abdul Bari (YouTube)</h4>
+                    <p>Busca la lista de reproducción "Algorithms" de Abdul Bari en YouTube. Explica Programación Dinámica, Backtracking y Voraces (Greedy) con una pizarra de forma increíblemente clara.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>📘 Grokking Algorithms</h4>
+                    <p>Un libro por Aditya Bhargava. Altamente recomendado si el "Cormen" te parece muy denso. Explica Voraces, Programación Dinámica, etc., con dibujos y explicaciones sencillas (para empezar).</p>
+                </div>
+                <div class="resource-card">
+                    <h4>💻 VisuAlgo.net</h4>
+                    <p><a href="https://visualgo.net/es" target="_blank">visualgo.net</a> es una plataforma que anima los algoritmos paso a paso. Excelente para ver cómo funcionan la recursión, árboles y optimizaciones en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

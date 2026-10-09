@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStudy | Heurísticas en Acción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: -webkit-linear-gradient(45deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- MAIN LAYOUT --- */
+        main {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* --- CARDS & GRIDS --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .icon-wrap {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* --- CODE SECTION --- */
+        .code-window {
+            background: #0d1117;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .window-header {
+            background: #161b22;
+            padding: 0.8rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+
+        .window-header span {
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        pre {
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 0;
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: #e5c07b;
+        }
+        .kw { color: #c678dd; } /* Keywords */
+        .fn { color: #61afef; } /* Functions */
+        .str { color: #98c379; } /* Strings */
+        .cmt { color: #7f848e; font-style: italic; } /* Comments */
+
+        /* --- ALGORITHM VISUALIZER --- */
+        .algo-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            background: #0b1120;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Algoritmos<span>Pro</span></a>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#problema">El Problema</a>
+                <a href="#estrategia">Estrategia</a>
+                <a href="#codigo">Implementación</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="inicio">
+        <span class="hero-badge">Semana 4: Estrategias de Aproximación</span>
+        <h1>El Enjambre Médico</h1>
+        <p>Optimizando rutas de vuelo para drones de rescate médico utilizando la Heurística del Vecino Más Cercano (Nearest Neighbor).</p>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: EL PROBLEMA -->
+        <section id="problema">
+            <h2 class="section-title">El Problema: Salvar Vidas a Contrarreloj</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.1rem;">
+                Imagina un desastre natural que ha dejado a múltiples hospitales de campaña sin suministros críticos. Tienes una flota de drones en la base principal. Tu misión es entregar vacunas a <strong>150 coordenadas diferentes</strong> en el menor tiempo posible, regresando a la base antes de que se agote la batería.
+            </p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="icon-wrap">🚁</div>
+                    <h3>Complejidad Explosiva</h3>
+                    <p>Este es el clásico <strong>Problema del Viajante de Comercio (TSP)</strong>. Probar todas las rutas posibles (Fuerza Bruta) con 150 puntos requeriría calcular 150! (factorial) rutas. ¡Tardaríamos más que la edad del universo en encontrar la ruta matemáticamente perfecta!</p>
+                </div>
+                <div class="card">
+                    <div class="icon-wrap">⏱️</div>
+                    <h3>Restricción de Tiempo</h3>
+                    <p>En emergencias médicas, no necesitamos la ruta "perfecta" si tardamos días en calcularla. Necesitamos una ruta <strong>"lo suficientemente buena"</strong> (una aproximación óptima) calculada en <strong>milisegundos</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: LA ESTRATEGIA -->
+        <section id="estrategia">
+            <h2 class="section-title">La Estrategia: Heurísticas (Semana 4)</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">
+                Dado que el problema es NP-Hard, abandonamos las estrategias exactas (como Branch & Bound) y optamos por una <strong>Estrategia de Aproximación (Heurística)</strong>. Usaremos el algoritmo del <em>Vecino Más Cercano (Nearest Neighbor)</em>.
+            </p>
+
+            <div class="algo-step">
+                <div class="step-number">1</div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Inicio desde la Base</h3>
+                    <p style="color: var(--text-muted);">El dron arranca motores en la coordenada inicial (Base de Operaciones). Marcamos este nodo como "visitado".</p>
+                </div>
+            </div>
+
+            <div class="algo-step">
+                <div class="step-number">2</div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Escaneo Radial (Decisión Golosa)</h3>
+                    <p style="color: var(--text-muted);">Calculamos la distancia euclidiana hacia todos los hospitales que aún NO han sido visitados. Elegimos el que esté <strong>físicamente más cerca</strong> de nuestra posición actual.</p>
+                </div>
+            </div>
+
+            <div class="algo-step">
+                <div class="step-number">3</div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">Vuelo y Repetición</h3>
+                    <p style="color: var(--text-muted);">El dron vuela a ese punto, lo marca como visitado y repite el Paso 2 desde su nueva ubicación hasta que todos los puntos estén cubiertos. Al final, retorna a la base.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CÓDIGO -->
+        <section id="codigo">
+            <h2 class="section-title">Implementación en Python</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted);">El código es sorprendentemente limpio y corre en tiempo <strong>O(n²)</strong>, lo cual es inmensamente más rápido que el tiempo factorial <strong>O(n!)</strong> de la fuerza bruta.</p>
+
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                    <span>drone_router.py</span>
+                </div>
+                <pre><code><span class="kw">import</span> numpy <span class="kw">as</span> np
+<span class="kw">from</span> scipy.spatial <span class="kw">import</span> distance
+
+<span class="kw">def</span> <span class="fn">nearest_neighbor_heuristic</span>(puntos, inicio=<span class="kw">0</span>):
+    <span class="cmt"># puntos: Array de coordenadas (x,y) de los hospitales</span>
+    n_puntos = <span class="fn">len</span>(puntos)
+    visitados = [<span class="kw">False</span>] * n_puntos
+    ruta = [inicio]
+    
+    visitados[inicio] = <span class="kw">True</span>
+    nodo_actual = inicio
+
+    <span class="kw">while</span> <span class="fn">len</span>(ruta) < n_puntos:
+        distancia_min = <span class="fn">float</span>(<span class="str">'inf'</span>)
+        vecino_cercano = <span class="kw">None</span>
+        
+        <span class="cmt"># Buscar el hospital no visitado más cercano</span>
+        <span class="kw">for</span> i <span class="kw">in range</span>(n_puntos):
+            <span class="kw">if not</span> visitados[i]:
+                d = distance.euclidean(puntos[nodo_actual], puntos[i])
+                <span class="kw">if</span> d < distancia_min:
+                    distancia_min = d
+                    vecino_cercano = i
+                    
+        <span class="cmt"># Volar hacia el vecino más cercano</span>
+        ruta.<span class="fn">append</span>(vecino_cercano)
+        visitados[vecino_cercano] = <span class="kw">True</span>
+        nodo_actual = vecino_cercano
+
+    <span class="cmt"># El dron debe volver a la base</span>
+    ruta.<span class="fn">append</span>(inicio)
+    <span class="kw">return</span> ruta</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>📚 Desarrollado para la Unidad I (Semana 4) de Estrategias Algorítmicas | Ingeniería Informática</p>
+    </footer>
+
+</body>
+</html>
